@@ -218,10 +218,10 @@ public class Login extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement st = con.createStatement();
             if("".equals(email.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Email Address is require", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Email Address is required", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else if("".equals(password.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Password is require", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else {
             Email    = email.getText();
