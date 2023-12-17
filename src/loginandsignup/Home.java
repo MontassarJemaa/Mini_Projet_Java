@@ -26,6 +26,7 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
@@ -34,6 +35,19 @@ public class Home extends javax.swing.JFrame {
         chefbtn = new javax.swing.JButton();
         admisbtn1 = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HOME");
@@ -167,28 +181,28 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
     private void chefbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chefbtnActionPerformed
-        choix choixFrame = new choix();
-        choixFrame.setVisible(true);
-        choixFrame.pack();
-        choixFrame.setLocationRelativeTo(null); 
+        choix_chef choix_chefFrame = new choix_chef();
+        choix_chefFrame.setVisible(true);
+        choix_chefFrame.pack();
+        choix_chefFrame.setLocationRelativeTo(null); 
         this.dispose();
 
     }//GEN-LAST:event_chefbtnActionPerformed
 
     private void admisbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admisbtnActionPerformed
-        choix choixFrame = new choix();
-        choixFrame.setVisible(true);
-        choixFrame.pack();
-        choixFrame.setLocationRelativeTo(null); 
+        choix_admin choix_adminFrame = new choix_admin();
+        choix_adminFrame.setVisible(true);
+        choix_adminFrame.pack();
+        choix_adminFrame.setLocationRelativeTo(null); 
         this.dispose();
 
     }//GEN-LAST:event_admisbtnActionPerformed
 
     private void admisbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admisbtn1ActionPerformed
-        choix choixFrame = new choix();
-        choixFrame.setVisible(true);
-        choixFrame.pack();
-        choixFrame.setLocationRelativeTo(null); 
+        choix_admin choix_adminFrame = new choix_admin();
+        choix_adminFrame.setVisible(true);
+        choix_adminFrame.pack();
+        choix_adminFrame.setLocationRelativeTo(null); 
         this.dispose();
     }//GEN-LAST:event_admisbtn1ActionPerformed
     
@@ -240,6 +254,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton admisbtn;
     private javax.swing.JButton admisbtn1;
     private javax.swing.JButton chefbtn;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
