@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("GESTION DES TACHES");
+        jLabel6.setText("Gestion des taches");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
@@ -59,19 +59,18 @@ public class Login extends javax.swing.JFrame {
         Right.setLayout(RightLayout);
         RightLayout.setHorizontalGroup(
             RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RightLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(57, 57, 57))
             .addGroup(RightLayout.createSequentialGroup()
-                .addGroup(RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RightLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel5))
-                    .addGroup(RightLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(145, 145, 145)
+                .addComponent(jLabel5)
+                .addContainerGap(155, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RightLayout.createSequentialGroup()
+                .addGap(0, 81, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RightLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(54, 54, 54))
         );
         RightLayout.setVerticalGroup(
             RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,12 +79,10 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(79, 79, 79))
+                .addGap(66, 66, 66))
         );
-
-        jLabel6.getAccessibleContext().setAccessibleName("GESTION DES TACHES");
 
         jPanel1.add(Right);
         Right.setBounds(0, 0, 400, 500);
@@ -218,10 +215,10 @@ public class Login extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement st = con.createStatement();
             if("".equals(email.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Email Address is required", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Email Address is require", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else if("".equals(password.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Password is require", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else {
             Email    = email.getText();

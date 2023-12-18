@@ -1,10 +1,8 @@
 
 package loginandsignup;
-import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -73,20 +71,20 @@ public class SignUp extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addComponent(jLabel2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
+                        .addGap(55, 55, 55)
                         .addComponent(jLabel3)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(64, 64, 64))
+                .addGap(66, 66, 66))
         );
 
         jPanel1.add(jPanel2);
@@ -104,11 +102,6 @@ public class SignUp extends javax.swing.JFrame {
 
         fname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         fname.setForeground(new java.awt.Color(102, 102, 102));
-        fname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fnameActionPerformed(evt);
-            }
-        });
 
         jLabel6.setBackground(new java.awt.Color(102, 102, 102));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -116,11 +109,6 @@ public class SignUp extends javax.swing.JFrame {
 
         emailAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         emailAddress.setForeground(new java.awt.Color(102, 102, 102));
-        emailAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailAddressActionPerformed(evt);
-            }
-        });
 
         jLabel7.setBackground(new java.awt.Color(102, 102, 102));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -128,11 +116,6 @@ public class SignUp extends javax.swing.JFrame {
 
         pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         pass.setForeground(new java.awt.Color(102, 102, 102));
-        pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
-            }
-        });
 
         jLabel8.setText("I've an account");
 
@@ -243,13 +226,13 @@ public class SignUp extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement st = con.createStatement();
             if("".equals(fname.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Full Name is required", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Full Name is require", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else if("".equals(emailAddress.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Email Address is required", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Email Address is require", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else if("".equals(pass.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error",
+                JOptionPane.showMessageDialog(new JFrame(), "Password is require", "Error",
                         JOptionPane.ERROR_MESSAGE);
             }else {
             fullName = fname.getText(); 
@@ -266,23 +249,11 @@ public class SignUp extends javax.swing.JFrame {
             pass.setText("");
             showMessageDialog(null, "New account has been created successfully!");
             }
-        }catch(HeadlessException | ClassNotFoundException | SQLException e){
+        }catch(Exception e){
            System.out.println("Error!" + e.getMessage()); 
         }
         
     }//GEN-LAST:event_SignUpBtnActionPerformed
-
-    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fnameActionPerformed
-
-    private void emailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailAddressActionPerformed
-
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
 
     /**
      * @param args the command line arguments
