@@ -352,8 +352,7 @@ public class Tache_interface extends javax.swing.JFrame {
         
         //connect to database
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
             String url = "jdbc:MySQL://localhost:3306/java_users_db";
             String user = "root";
             String pass = "";
@@ -365,6 +364,7 @@ public class Tache_interface extends javax.swing.JFrame {
              
                 JOptionPane.showMessageDialog(new JFrame(), "First Name is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
+            
             }else if("".equals(lName.getText())){
              
                 JOptionPane.showMessageDialog(new JFrame(), "Last Name is require", "Dialog",

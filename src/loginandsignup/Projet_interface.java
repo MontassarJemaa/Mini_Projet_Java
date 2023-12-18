@@ -41,9 +41,9 @@ public class Projet_interface extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         fName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        lName = new javax.swing.JTextField();
+        fCategorie = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        fProprietaire = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
@@ -53,6 +53,8 @@ public class Projet_interface extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         BACKBtn = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        fDate_limit = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -67,7 +69,7 @@ public class Projet_interface extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("First Name");
+        jLabel2.setText("Name");
 
         fName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,20 +78,20 @@ public class Projet_interface extends javax.swing.JFrame {
         });
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Last Name");
+        jLabel3.setText("Categorie");
 
-        lName.addActionListener(new java.awt.event.ActionListener() {
+        fCategorie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lNameActionPerformed(evt);
+                fCategorieActionPerformed(evt);
             }
         });
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Email");
+        jLabel4.setText("Proprietaire");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        fProprietaire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                fProprietaireActionPerformed(evt);
             }
         });
 
@@ -152,6 +154,15 @@ public class Projet_interface extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Date_limit");
+
+        fDate_limit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fDate_limitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -168,8 +179,8 @@ public class Projet_interface extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(searchBtn))
                     .addComponent(fName)
-                    .addComponent(lName)
-                    .addComponent(email)
+                    .addComponent(fCategorie)
+                    .addComponent(fProprietaire)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(submit)
                         .addGap(18, 18, 18)
@@ -177,7 +188,9 @@ public class Projet_interface extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(delete)
                         .addGap(18, 18, 18)
-                        .addComponent(Clear)))
+                        .addComponent(Clear))
+                    .addComponent(jLabel7)
+                    .addComponent(fDate_limit))
                 .addGap(84, 84, 84))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -189,31 +202,35 @@ public class Projet_interface extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(fCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addComponent(fProprietaire, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fDate_limit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BACKBtn)
                     .addComponent(LogoutBtn))
@@ -222,20 +239,20 @@ public class Projet_interface extends javax.swing.JFrame {
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "First Name", "Last Name", "Email"
+                "ID", "Name", "Categorie", "Proprietaire", "Date_limit"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -305,38 +322,40 @@ public class Projet_interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fNameActionPerformed
 
-    private void lNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameActionPerformed
+    private void fCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fCategorieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lNameActionPerformed
+    }//GEN-LAST:event_fCategorieActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void fProprietaireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fProprietaireActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_fProprietaireActionPerformed
     
     public void loadData(){
       try {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String url = "jdbc:MySQL://localhost:3306/java_users_db";
+        String url = "jdbc:MySQL://localhost:3306/java_user_database";
         String user = "root";
         String pass = "";
 
         Connection con = DriverManager.getConnection(url, user, pass);
         Statement st = con.createStatement();
             
-       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "First Name", "Last Name", "email"}, 0);
+       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Name", "Categorie", "Proprietaire", "Date_limit"}, 0);
       
        Table.setModel(model);
-       String sql = "SELECT * FROM user";
+       String sql = "SELECT * FROM projet";
        
        ResultSet rs = st.executeQuery(sql);
-       String i, f, l,e;
+       String i, n, c, p, d;
        while(rs.next()){
          i = rs.getString("id");
-         f = rs.getString("first_name");
-         l = rs.getString("last_name");
-         e = rs.getString("email");
-         model.addRow(new Object[]{i, f, l, e});
+         n = rs.getString("name");
+         c = rs.getString("categorie");
+         p = rs.getString("proprietaire");
+         d = rs.getString("date_limit");
+
+         model.addRow(new Object[]{i, n, c, p, d});
        }
      }catch(Exception e){
             System.out.println("Error "+ e.getMessage());
@@ -345,14 +364,14 @@ public class Projet_interface extends javax.swing.JFrame {
        
     }
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        String fN, lN, em, query;
+        String fname, fcategorie, fproprietaire, fdate_limit, query;
         
         
         //connect to database
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -360,31 +379,41 @@ public class Projet_interface extends javax.swing.JFrame {
             Statement st = con.createStatement();
             
             if("".equals(fName.getText())){
+                
+                JOptionPane.showMessageDialog(new JFrame(), "Name is require", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else if("".equals(fCategorie.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "First Name is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(lName.getText())){
+                JOptionPane.showMessageDialog(new JFrame(), "Categorie is require", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else if("".equals(fProprietaire.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Last Name is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(email.getText())){
+                JOptionPane.showMessageDialog(new JFrame(), "Proprietaire is require", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+            }     
+            else if("".equals(fDate_limit.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Email Adress is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Date_limit is require", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);    
             }else {
-                fN = fName.getText();
-                lN = lName.getText();
-                em = email.getText();
-                query = "INSERT INTO user (first_name, last_name, email) "
-                        + "VALUES ('"+fN+"','"+lN+"','"+em+"')";
-               
-               st.executeUpdate(query);
-               fName.setText("");
-               lName.setText("");
-               email.setText("");
-               showMessageDialog(null, "Successfully registered.");
-               loadData();
-               con.close();
+                fname = fName.getText();
+                fcategorie = fCategorie.getText();
+                fproprietaire = fProprietaire.getText();
+                fdate_limit = fDate_limit.getText();
+                query = "INSERT INTO projet (name, categorie, proprietaire, date_limit) "
+                  + "VALUES ('"+fname+"','"+fcategorie+"','"+fproprietaire+"','"+fdate_limit+"')";
+
+                
+                st.executeUpdate(query);
+                fName.setText("");
+                fCategorie.setText("");
+                fProprietaire.setText("");
+                fDate_limit.setText("");
+                showMessageDialog(null, "Successfully registered.");
+                loadData();
+                con.close();
             }   
         }catch(Exception e){
             System.out.println("Error "+ e.getMessage());
@@ -396,11 +425,11 @@ public class Projet_interface extends javax.swing.JFrame {
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         String ID;
         int notFound = 0;
-        String fN, lN, em;
+        String fname, fcategorie, fproprietaire, fdate_limit, query;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -412,14 +441,15 @@ public class Projet_interface extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
+               String sql = "SELECT * FROM projet WHERE id="+ID;
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
                  notFound = 1;
-                 fN = fName.getText();
-                 lN = lName.getText();
-                 em = email.getText();
-                 String sql2 = "UPDATE user SET first_name='"+fN+"', last_name='"+lN+"', email='"+em+"'  WHERE id="+ID;
+                 fname = fName.getText();
+                 fcategorie = fCategorie.getText();
+                 fproprietaire = fProprietaire.getText();
+                 fdate_limit = fDate_limit.getText();
+                 String sql2 = "UPDATE projet SET name='"+fname+"', categorie='"+fcategorie+"', proprietaire='"+fproprietaire+"', date_limit='"+fdate_limit+"'  WHERE id="+ID;
                  st.executeUpdate(sql2); 
                  loadData();
                  con.close();
@@ -441,7 +471,7 @@ public class Projet_interface extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -453,12 +483,13 @@ public class Projet_interface extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
+               String sql = "SELECT * FROM projet WHERE id="+ID;
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
-                   fName.setText(rs.getString("first_name"));
-                   lName.setText(rs.getString("last_name"));
-                   email.setText(rs.getString("email"));
+                   fName.setText(rs.getString("name"));
+                   fCategorie.setText(rs.getString("categorie"));
+                   fProprietaire.setText(rs.getString("proprietaire"));
+                   fDate_limit.setText(rs.getString("date_limit"));
                    notFound = 1;
 
                   con.close();
@@ -482,7 +513,7 @@ public class Projet_interface extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -494,11 +525,11 @@ public class Projet_interface extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
+               String sql = "SELECT * FROM projet WHERE id="+ID;
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
                  notFound = 1;
-                 String sql2 = "DELETE FROM user WHERE id="+ID;
+                 String sql2 = "DELETE FROM projet WHERE id="+ID;
                  st.executeUpdate(sql2); 
                  loadData();
                  con.close();
@@ -520,8 +551,9 @@ public class Projet_interface extends javax.swing.JFrame {
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         fName.setText("");
-        lName.setText("");
-        email.setText("");
+        fCategorie.setText("");
+        fProprietaire.setText("");
+        fDate_limit.setText("");
     }//GEN-LAST:event_ClearActionPerformed
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
@@ -539,6 +571,10 @@ public class Projet_interface extends javax.swing.JFrame {
         choix_adminFrame.setLocationRelativeTo(null);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_BACKBtnActionPerformed
+
+    private void fDate_limitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fDate_limitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fDate_limitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -593,17 +629,19 @@ public class Projet_interface extends javax.swing.JFrame {
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JTable Table;
     private javax.swing.JButton delete;
-    private javax.swing.JTextField email;
+    private javax.swing.JTextField fCategorie;
+    private javax.swing.JTextField fDate_limit;
     private javax.swing.JTextField fName;
+    private javax.swing.JTextField fProprietaire;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lName;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField serachData;
     private javax.swing.JButton submit;
