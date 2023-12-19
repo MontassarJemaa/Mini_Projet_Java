@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package loginandsignup;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,16 +13,14 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
 
-
-
 /**
  *
- * @author Rahemet
+ * @author Montassar
  */
 public class Tache_interface extends javax.swing.JFrame {
 
     /**
-     * Creates new form View
+     * Creates new form Tache_interface1
      */
     public Tache_interface() {
         initComponents();
@@ -36,14 +35,15 @@ public class Tache_interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        fName = new javax.swing.JTextField();
+        fDescription = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        lName = new javax.swing.JTextField();
+        fDate_fin = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        fDate_debut = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
@@ -53,13 +53,23 @@ public class Tache_interface extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         BACKBtn = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
+        fStatut = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        fPriorite = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        fId_employe = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        fId_projet = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel11.setText("Tache_INTERFACE");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tache_interface");
-        setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,29 +77,29 @@ public class Tache_interface extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("First Name");
+        jLabel2.setText("Description");
 
-        fName.addActionListener(new java.awt.event.ActionListener() {
+        fDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fNameActionPerformed(evt);
+                fDescriptionActionPerformed(evt);
             }
         });
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Last Name");
+        jLabel3.setText("Date_fin");
 
-        lName.addActionListener(new java.awt.event.ActionListener() {
+        fDate_fin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lNameActionPerformed(evt);
+                fDate_finActionPerformed(evt);
             }
         });
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Email");
+        jLabel4.setText("Date_debut");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        fDate_debut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                fDate_debutActionPerformed(evt);
             }
         });
 
@@ -152,55 +162,135 @@ public class Tache_interface extends javax.swing.JFrame {
             }
         });
 
+        fStatut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fStatutActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Statut");
+
+        fPriorite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fPrioriteActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Priorite");
+
+        fId_employe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fId_employeActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("ID Employe");
+
+        fId_projet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fId_projetActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("ID Project");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchBtn))
-                    .addComponent(fName)
-                    .addComponent(lName)
-                    .addComponent(email)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(submit)
-                        .addGap(18, 18, 18)
-                        .addComponent(update)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete)
-                        .addGap(18, 18, 18)
-                        .addComponent(Clear)))
-                .addGap(84, 84, 84))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(BACKBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutBtn)
                 .addGap(23, 23, 23))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(searchBtn))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(submit)
+                                .addGap(43, 43, 43)
+                                .addComponent(update)
+                                .addGap(49, 49, 49)
+                                .addComponent(delete)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addComponent(Clear))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(fDate_fin, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel2)
+                                        .addComponent(fDate_debut)
+                                        .addComponent(fDescription))
+                                    .addComponent(jLabel4))
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fStatut)
+                                    .addComponent(fPriorite)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(fId_employe, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(fId_projet, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))))))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fStatut, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fDate_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fPriorite, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fDate_debut, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fId_employe, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fId_projet, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,7 +303,7 @@ public class Tache_interface extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BACKBtn)
                     .addComponent(LogoutBtn))
@@ -222,20 +312,20 @@ public class Tache_interface extends javax.swing.JFrame {
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "First Name", "Last Name", "Email"
+                "ID", "Description", "Date_fin", "Date_debut", "Statut", "Priorite", "ID Employee", "ID Projet"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -248,9 +338,6 @@ public class Tache_interface extends javax.swing.JFrame {
         });
         Table.setPreferredSize(new java.awt.Dimension(500, 400));
         jScrollPane1.setViewportView(Table);
-        if (Table.getColumnModel().getColumnCount() > 0) {
-            Table.getColumnModel().getColumn(0).setMaxWidth(50);
-        }
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
@@ -264,13 +351,13 @@ public class Tache_interface extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(jLabel6)
+                        .addContainerGap(95, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(80, 80, 80))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,56 +376,56 @@ public class Tache_interface extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNameActionPerformed
+    private void fDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fDescriptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fNameActionPerformed
+    }//GEN-LAST:event_fDescriptionActionPerformed
 
-    private void lNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameActionPerformed
+    private void fDate_finActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fDate_finActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lNameActionPerformed
+    }//GEN-LAST:event_fDate_finActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void fDate_debutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fDate_debutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-    
+    }//GEN-LAST:event_fDate_debutActionPerformed
+
     public void loadData(){
       try {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String url = "jdbc:MySQL://localhost:3306/java_users_db";
+        String url = "jdbc:MySQL://localhost:3306/java_user_database";
         String user = "root";
         String pass = "";
 
         Connection con = DriverManager.getConnection(url, user, pass);
         Statement st = con.createStatement();
             
-       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "First Name", "Last Name", "email"}, 0);
+       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Description", "Date_fin", "Date_debut", "Statut", "Priorite", "ID_Employee", "ID_Projet"}, 0);
       
        Table.setModel(model);
-       String sql = "SELECT * FROM user";
+       String sql = "SELECT * FROM tache";
        
        ResultSet rs = st.executeQuery(sql);
-       String i, f, l,e;
+       String i, d, df, dd, s, p, ie, ip;
        while(rs.next()){
          i = rs.getString("id");
-         f = rs.getString("first_name");
-         l = rs.getString("last_name");
-         e = rs.getString("email");
-         model.addRow(new Object[]{i, f, l, e});
+         d = rs.getString("description");
+         df = rs.getString("date_fin");
+         dd = rs.getString("date_debut");
+         s = rs.getString("statut");
+         p = rs.getString("priorite");
+         ie = rs.getString("idemploye");
+         ip = rs.getString("idprojet");
+         model.addRow(new Object[]{i, d, df, dd, s, p, ie, ip});
        }
      }catch(Exception e){
             System.out.println("Error "+ e.getMessage());
@@ -347,136 +434,123 @@ public class Tache_interface extends javax.swing.JFrame {
        
     }
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        String fN, lN, em, query;
+        String fdescription, fdate_fin, fdate_debut, fstatut, fpriorite, fid_employe, id_projet, query;
         
         
         //connect to database
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); 
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement st = con.createStatement();
             
-            if("".equals(fName.getText())){
-             
-                JOptionPane.showMessageDialog(new JFrame(), "First Name is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            
-            }else if("".equals(lName.getText())){
-             
-                JOptionPane.showMessageDialog(new JFrame(), "Last Name is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(email.getText())){
-             
-                JOptionPane.showMessageDialog(new JFrame(), "Email Adress is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else {
-                fN = fName.getText();
-                lN = lName.getText();
-                em = email.getText();
-                query = "INSERT INTO user (first_name, last_name, email) "
-                        + "VALUES ('"+fN+"','"+lN+"','"+em+"')";
+            if ("".equals(fDescription.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Description is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fDate_fin.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Date_fin is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fDate_debut.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Date_debut is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fStatut.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Statut is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fPriorite.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Priorite is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fId_employe.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Id_Employe is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(fId_projet.getText())) {
+                JOptionPane.showMessageDialog(new JFrame(), "Id_Projet is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+            } else {
+                fdescription = fDescription.getText();
+                fdate_fin = fDate_fin.getText();
+                fdate_debut = fDate_debut.getText();
+                fstatut = fStatut.getText();
+                fpriorite = fPriorite.getText();
+                fid_employe = fId_employe.getText();
+                id_projet = fId_projet.getText();
+                query = "INSERT INTO tache (description, date_fin, date_debut, statut, priorite, idemploye, idprojet) "
+                + "VALUES ('" + fdescription + "','" + fdate_fin + "','" + fdate_debut + "','" + fstatut + "','" + fpriorite + "','" + fid_employe + "','" + id_projet + "')";
                
                st.executeUpdate(query);
-               fName.setText("");
-               lName.setText("");
-               email.setText("");
+                fDescription.setText("");
+                fDate_fin.setText("");
+                fDate_debut.setText("");
+                fStatut.setText("");
+                fPriorite.setText("");
+                fId_employe.setText("");
+                fId_projet.setText("");
                showMessageDialog(null, "Successfully registered.");
                loadData();
-               con.close();
             }   
+            st.close();
+            con.close();
         }catch(Exception e){
             System.out.println("Error "+ e.getMessage());
             
         }
-        
     }//GEN-LAST:event_submitActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        String ID;
-        int notFound = 0;
-        String fN, lN, em;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
-            String user = "root";
-            String pass = "";
-            
-            Connection con = DriverManager.getConnection(url, user, pass);
-            Statement st = con.createStatement();
-            
-            ID = serachData.getText();
-            if("".equals(ID)){
-              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
-               ResultSet rs = st.executeQuery(sql);
-               while(rs.next()){
-                 notFound = 1;
-                 fN = fName.getText();
-                 lN = lName.getText();
-                 em = email.getText();
-                 String sql2 = "UPDATE user SET first_name='"+fN+"', last_name='"+lN+"', email='"+em+"'  WHERE id="+ID;
-                 st.executeUpdate(sql2); 
-                 loadData();
-                 con.close();
-               }
-               if(notFound == 0){
-                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-               }
+    String ID;
+    int notFound = 0;
+    String fdescription, fdate_fin, fdate_debut, fstatut, fpriorite, fid_employe, fid_projet, query;
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        String url = "jdbc:MySQL://localhost:3306/java_user_database";
+        String user = "root";
+        String pass = "";
+        
+        con = DriverManager.getConnection(url, user, pass);
+        st = con.createStatement();
+        
+        ID = serachData.getText();
+        if("".equals(ID)){
+            JOptionPane.showMessageDialog(new JFrame(), "ID is required", "Dialog",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            String sql = "SELECT * FROM tache WHERE id=" + ID;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                notFound = 1;
+                fdescription = fDescription.getText();
+                fdate_fin = fDate_fin.getText();
+                fdate_debut = fDate_debut.getText();
+                fstatut = fStatut.getText();
+                fpriorite = fPriorite.getText();
+                fid_employe = fId_employe.getText();
+                fid_projet = fId_projet.getText();
+                
+                String sql2 = "UPDATE tache SET description='" + fdescription + "', date_fin='" + fdate_fin
+                        + "', date_debut='" + fdate_debut + "', statut='" + fstatut + "', priorite='" + fpriorite
+                        + "', idemploye='" + fid_employe + "', idprojet='" + fid_projet + "' WHERE id=" + ID;
+                st.executeUpdate(sql2); 
+                loadData();
             }
-        }catch(Exception e){
-            System.out.println("Error "+ e.getMessage());
-            
-        } 
+
+            if(notFound == 0){
+                JOptionPane.showMessageDialog(new JFrame(), "Invalid ID", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    } catch(Exception e){
+        System.out.println("Error "+ e.getMessage());
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (st != null) st.close();
+            if (con != null) con.close();
+        } catch (Exception ex) {
+            System.out.println("Error closing resources: " + ex.getMessage());
+        }
+    }
     }//GEN-LAST:event_updateActionPerformed
-
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
-        String ID;
-        int notFound = 0;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
-            String user = "root";
-            String pass = "";
-            
-            Connection con = DriverManager.getConnection(url, user, pass);
-            Statement st = con.createStatement();
-            
-            ID = serachData.getText();
-            if("".equals(ID)){
-              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
-               ResultSet rs = st.executeQuery(sql);
-               while(rs.next()){
-                   fName.setText(rs.getString("first_name"));
-                   lName.setText(rs.getString("last_name"));
-                   email.setText(rs.getString("email"));
-                   notFound = 1;
-
-                  con.close();
-               }
-               if(notFound == 0){
-                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-               }
-            }
-        }catch(Exception e){
-            System.out.println("Error "+ e.getMessage());
-            
-        }    
-        
-        
-    }//GEN-LAST:event_searchBtnActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         String ID;
@@ -484,7 +558,7 @@ public class Tache_interface extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -496,15 +570,18 @@ public class Tache_interface extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
+               String sql = "SELECT * FROM tache WHERE id="+ID;
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
                  notFound = 1;
-                 String sql2 = "DELETE FROM user WHERE id="+ID;
+                 String sql2 = "DELETE FROM tache WHERE id="+ID;
                  st.executeUpdate(sql2); 
                  loadData();
-                 con.close();
-               }
+                }
+                  
+                  con.close();
+                  st.close();
+                  rs.close();
                if(notFound == 0){
                   JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
@@ -516,15 +593,74 @@ public class Tache_interface extends javax.swing.JFrame {
         }  
     }//GEN-LAST:event_deleteActionPerformed
 
+    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
+        fDescription.setText("");
+        fDate_fin.setText("");
+        fDate_debut.setText("");
+        fStatut.setText("");
+        fPriorite.setText("");
+        fId_employe.setText("");
+        fId_projet.setText("");
+    }//GEN-LAST:event_ClearActionPerformed
+
     private void serachDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serachDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_serachDataActionPerformed
 
-    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-        fName.setText("");
-        lName.setText("");
-        email.setText("");
-    }//GEN-LAST:event_ClearActionPerformed
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        String ID;
+        int notFound = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
+            String user = "root";
+            String pass = "";
+            
+            Connection con = DriverManager.getConnection(url, user, pass);
+            Statement st = con.createStatement();
+            
+            ID = serachData.getText();
+            if("".equals(ID)){
+              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
+                                     JOptionPane.ERROR_MESSAGE);
+            }else {
+               String sql = "SELECT * FROM tache WHERE id="+ID;
+               ResultSet rs = st.executeQuery(sql);
+               while(rs.next()){
+                   fDescription.setText(rs.getString("description"));
+                   fDate_fin.setText(rs.getString("date_fin"));
+                   fDate_debut.setText(rs.getString("date_debut"));
+                   fDate_fin.setText(rs.getString("date_debut"));
+                   fDate_debut.setText(rs.getString("date_debut"));
+                   fStatut.setText(rs.getString("statut"));
+                   fPriorite.setText(rs.getString("priorite"));
+                   fId_employe.setText(rs.getString("idemploye"));
+                   fId_projet.setText(rs.getString("idprojet"));
+                   notFound = 1;
+
+               }
+                  con.close();
+                  rs.close();
+                  st.close();
+               if(notFound == 0){
+                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
+                                     JOptionPane.ERROR_MESSAGE);
+               }
+            }
+        }catch(Exception e){
+            System.out.println("Error "+ e.getMessage());
+            
+        }    
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void BACKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKBtnActionPerformed
+        choix_admin choix_adminFrame = new choix_admin();
+        choix_adminFrame.setVisible(true);
+        choix_adminFrame.pack();
+        choix_adminFrame.setLocationRelativeTo(null);
+        this.dispose();       // TODO add your handling code here:
+    }//GEN-LAST:event_BACKBtnActionPerformed
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
         Login LoginFrame = new Login();
@@ -534,13 +670,21 @@ public class Tache_interface extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
-    private void BACKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKBtnActionPerformed
-        choix_admin choix_adminFrame = new choix_admin();
-        choix_adminFrame.setVisible(true);
-        choix_adminFrame.pack();
-        choix_adminFrame.setLocationRelativeTo(null);
-        this.dispose();       // TODO add your handling code here:
-    }//GEN-LAST:event_BACKBtnActionPerformed
+    private void fStatutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fStatutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fStatutActionPerformed
+
+    private void fPrioriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fPrioriteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fPrioriteActionPerformed
+
+    private void fId_employeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fId_employeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fId_employeActionPerformed
+
+    private void fId_projetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fId_projetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fId_projetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -551,7 +695,6 @@ public class Tache_interface extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -570,29 +713,11 @@ public class Tache_interface extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                Tache_interface x = new Tache_interface();
-                x.loadData();
-                x.setLocationRelativeTo(null);
-                x.setVisible(true);
+                new Tache_interface().setVisible(true);
             }
         });
     }
@@ -603,17 +728,26 @@ public class Tache_interface extends javax.swing.JFrame {
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JTable Table;
     private javax.swing.JButton delete;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField fName;
+    private javax.swing.JTextField fDate_debut;
+    private javax.swing.JTextField fDate_fin;
+    private javax.swing.JTextField fDescription;
+    private javax.swing.JTextField fId_employe;
+    private javax.swing.JTextField fId_projet;
+    private javax.swing.JTextField fPriorite;
+    private javax.swing.JTextField fStatut;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lName;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField serachData;
     private javax.swing.JButton submit;
