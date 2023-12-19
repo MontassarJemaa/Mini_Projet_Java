@@ -30,8 +30,8 @@ public class choix_chef extends javax.swing.JFrame {
         LogoutBtn = new javax.swing.JButton();
         AffectationBtn = new javax.swing.JButton();
         TacheBtn = new javax.swing.JButton();
-        BACKBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        BACKBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Choix_Interface");
@@ -64,17 +64,16 @@ public class choix_chef extends javax.swing.JFrame {
             }
         });
 
-        BACKBtn.setBackground(new java.awt.Color(51, 255, 204));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3.setText("Choix_Chef de projet");
+
         BACKBtn.setText("BACK");
         BACKBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BACKBtnActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel3.setText("Choix_Chef de projet");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,12 +100,13 @@ public class choix_chef extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(15, 15, 15)
                         .addComponent(jLabel3))
-                    .addComponent(BACKBtn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BACKBtn)))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AffectationBtn)
@@ -160,8 +160,7 @@ public class choix_chef extends javax.swing.JFrame {
         HomeFrame.setVisible(true);
         HomeFrame.pack();
         HomeFrame.setLocationRelativeTo(null);
-        this.dispose(); 
-        // TODO add your handling code here:
+        this.dispose();       // TODO add your handling code here:
     }//GEN-LAST:event_BACKBtnActionPerformed
 
     /**

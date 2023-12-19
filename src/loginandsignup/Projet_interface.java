@@ -306,6 +306,8 @@ public class Projet_interface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel2.getAccessibleContext().setAccessibleName("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -317,7 +319,7 @@ public class Projet_interface extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("");
+        jPanel1.getAccessibleContext().setAccessibleName("Projet_Interface");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -380,17 +382,17 @@ public class Projet_interface extends javax.swing.JFrame {
             
             if("".equals(fName.getText())){
                 
-                JOptionPane.showMessageDialog(new JFrame(), "Name is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the Name", "ERROR",
                         JOptionPane.ERROR_MESSAGE);
             }
             else if("".equals(fProprietaire.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Proprietaire is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the Proprietaire", "ERROR",
                         JOptionPane.ERROR_MESSAGE);
             }     
             else if("".equals(fDate_limit.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Date_limit is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Invalid date format for Date_fin. Please use YY/MM/DD", "ERROR",
                         JOptionPane.ERROR_MESSAGE);    
             }else {
                 fname = fName.getText();
