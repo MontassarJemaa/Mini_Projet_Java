@@ -41,7 +41,6 @@ public class Projet_interface extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         fName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        fCategorie = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         fProprietaire = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
@@ -55,6 +54,7 @@ public class Projet_interface extends javax.swing.JFrame {
         LogoutBtn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         fDate_limit = new javax.swing.JTextField();
+        fCategorie = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -79,12 +79,6 @@ public class Projet_interface extends javax.swing.JFrame {
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Categorie");
-
-        fCategorie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fCategorieActionPerformed(evt);
-            }
-        });
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Proprietaire");
@@ -163,41 +157,51 @@ public class Projet_interface extends javax.swing.JFrame {
             }
         });
 
+        fCategorie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JAVA", "C#", "PYTHON", "JAVA SCRIPT" }));
+        fCategorie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fCategorieActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchBtn))
-                    .addComponent(fName)
-                    .addComponent(fCategorie)
-                    .addComponent(fProprietaire)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(submit)
-                        .addGap(18, 18, 18)
-                        .addComponent(update)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete)
-                        .addGap(18, 18, 18)
-                        .addComponent(Clear))
-                    .addComponent(jLabel7)
-                    .addComponent(fDate_limit))
-                .addGap(84, 84, 84))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(BACKBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutBtn)
                 .addGap(23, 23, 23))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fCategorie, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fName, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fProprietaire, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fDate_limit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(searchBtn))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(submit)
+                                .addGap(18, 18, 18)
+                                .addComponent(update)
+                                .addGap(18, 18, 18)
+                                .addComponent(delete)
+                                .addGap(18, 18, 18)
+                                .addComponent(Clear))
+                            .addComponent(jLabel7))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(84, 84, 84))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +218,7 @@ public class Projet_interface extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fProprietaire, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fDate_limit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,10 +326,6 @@ public class Projet_interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fNameActionPerformed
 
-    private void fCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fCategorieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fCategorieActionPerformed
-
     private void fProprietaireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fProprietaireActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fProprietaireActionPerformed
@@ -383,11 +383,6 @@ public class Projet_interface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(new JFrame(), "Name is require", "Dialog",
                         JOptionPane.ERROR_MESSAGE);
             }
-            else if("".equals(fCategorie.getText())){
-             
-                JOptionPane.showMessageDialog(new JFrame(), "Categorie is require", "Dialog",
-                        JOptionPane.ERROR_MESSAGE);
-            }
             else if("".equals(fProprietaire.getText())){
              
                 JOptionPane.showMessageDialog(new JFrame(), "Proprietaire is require", "Dialog",
@@ -399,7 +394,7 @@ public class Projet_interface extends javax.swing.JFrame {
                         JOptionPane.ERROR_MESSAGE);    
             }else {
                 fname = fName.getText();
-                fcategorie = fCategorie.getText();
+                fcategorie = fCategorie.getSelectedItem().toString();
                 fproprietaire = fProprietaire.getText();
                 fdate_limit = fDate_limit.getText();
                 query = "INSERT INTO projet (name, categorie, proprietaire, date_limit) "
@@ -408,7 +403,6 @@ public class Projet_interface extends javax.swing.JFrame {
                 
                 st.executeUpdate(query);
                 fName.setText("");
-                fCategorie.setText("");
                 fProprietaire.setText("");
                 fDate_limit.setText("");
                 showMessageDialog(null, "Successfully registered.");
@@ -446,7 +440,7 @@ public class Projet_interface extends javax.swing.JFrame {
                while(rs.next()){
                  notFound = 1;
                  fname = fName.getText();
-                 fcategorie = fCategorie.getText();
+                 fcategorie = fCategorie.getSelectedItem().toString();
                  fproprietaire = fProprietaire.getText();
                  fdate_limit = fDate_limit.getText();
                  String sql2 = "UPDATE projet SET name='"+fname+"', categorie='"+fcategorie+"', proprietaire='"+fproprietaire+"', date_limit='"+fdate_limit+"'  WHERE id="+ID;
@@ -487,7 +481,7 @@ public class Projet_interface extends javax.swing.JFrame {
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
                    fName.setText(rs.getString("name"));
-                   fCategorie.setText(rs.getString("categorie"));
+                   fCategorie.setSelectedItem(rs.getString("categorie"));
                    fProprietaire.setText(rs.getString("proprietaire"));
                    fDate_limit.setText(rs.getString("date_limit"));
                    notFound = 1;
@@ -551,7 +545,6 @@ public class Projet_interface extends javax.swing.JFrame {
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         fName.setText("");
-        fCategorie.setText("");
         fProprietaire.setText("");
         fDate_limit.setText("");
     }//GEN-LAST:event_ClearActionPerformed
@@ -575,6 +568,11 @@ public class Projet_interface extends javax.swing.JFrame {
     private void fDate_limitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fDate_limitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fDate_limitActionPerformed
+
+    private void fCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fCategorieActionPerformed
+        // TODO add your handling code here:
+        String selectedvalue = fCategorie.getSelectedItem().toString();
+    }//GEN-LAST:event_fCategorieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -629,7 +627,7 @@ public class Projet_interface extends javax.swing.JFrame {
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JTable Table;
     private javax.swing.JButton delete;
-    private javax.swing.JTextField fCategorie;
+    private javax.swing.JComboBox<String> fCategorie;
     private javax.swing.JTextField fDate_limit;
     private javax.swing.JTextField fName;
     private javax.swing.JTextField fProprietaire;
