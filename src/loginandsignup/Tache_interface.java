@@ -53,14 +53,14 @@ public class Tache_interface extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         BACKBtn = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
-        fStatut = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        fPriorite = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         fId_employe = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         fId_projet = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        fPriorite = new javax.swing.JComboBox<>();
+        fStatut = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -73,6 +73,7 @@ public class Tache_interface extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setToolTipText("");
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -162,20 +163,8 @@ public class Tache_interface extends javax.swing.JFrame {
             }
         });
 
-        fStatut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fStatutActionPerformed(evt);
-            }
-        });
-
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Statut");
-
-        fPriorite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fPrioriteActionPerformed(evt);
-            }
-        });
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Priorite");
@@ -197,6 +186,20 @@ public class Tache_interface extends javax.swing.JFrame {
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ID Project");
+
+        fPriorite.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urgent", "Important", "Moyen", "Minimim" }));
+        fPriorite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fPrioriteActionPerformed(evt);
+            }
+        });
+
+        fStatut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Non démarrée", "En cours", "En test", "Terminée" }));
+        fStatut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fStatutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,8 +243,6 @@ public class Tache_interface extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(31, 31, 31)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fStatut)
-                                    .addComponent(fPriorite)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -251,14 +252,16 @@ public class Tache_interface extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel10)
-                                            .addComponent(fId_projet, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))))))))
+                                            .addComponent(fId_projet, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
+                                    .addComponent(fPriorite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fStatut, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -266,17 +269,15 @@ public class Tache_interface extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fStatut, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(fStatut)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fDate_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fPriorite, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fDate_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fPriorite, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -351,13 +352,13 @@ public class Tache_interface extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel6)
-                        .addContainerGap(95, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1)
-                        .addContainerGap())))
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(122, 122, 122))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,6 +373,8 @@ public class Tache_interface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel2.getAccessibleContext().setAccessibleName("Projet_Interface");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -382,6 +385,8 @@ public class Tache_interface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("Tache_Interface");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -449,25 +454,21 @@ public class Tache_interface extends javax.swing.JFrame {
             Statement st = con.createStatement();
             
             if ("".equals(fDescription.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Description is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the Description", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(fDate_fin.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Date_fin is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+                 JOptionPane.showMessageDialog(new JFrame(), "Invalid date format for Date_fin. Please use YY/MM/DD", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(fDate_debut.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Date_debut is required", "Dialog", JOptionPane.ERROR_MESSAGE);
-            } else if ("".equals(fStatut.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Statut is required", "Dialog", JOptionPane.ERROR_MESSAGE);
-            } else if ("".equals(fPriorite.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Priorite is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Invalid date format for Date_fin. Please use YY/MM/DD", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(fId_employe.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Id_Employe is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the ID_Employe", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(fId_projet.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Id_Projet is required", "Dialog", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the ID_Projet", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
                 fdescription = fDescription.getText();
                 fdate_fin = fDate_fin.getText();
                 fdate_debut = fDate_debut.getText();
-                fstatut = fStatut.getText();
-                fpriorite = fPriorite.getText();
+                fstatut = fStatut.getSelectedItem().toString();
+                fpriorite = fPriorite.getSelectedItem().toString();
                 fid_employe = fId_employe.getText();
                 id_projet = fId_projet.getText();
                 query = "INSERT INTO tache (description, date_fin, date_debut, statut, priorite, idemploye, idprojet) "
@@ -477,8 +478,6 @@ public class Tache_interface extends javax.swing.JFrame {
                 fDescription.setText("");
                 fDate_fin.setText("");
                 fDate_debut.setText("");
-                fStatut.setText("");
-                fPriorite.setText("");
                 fId_employe.setText("");
                 fId_projet.setText("");
                showMessageDialog(null, "Successfully registered.");
@@ -495,7 +494,7 @@ public class Tache_interface extends javax.swing.JFrame {
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
     String ID;
     int notFound = 0;
-    String fdescription, fdate_fin, fdate_debut, fstatut, fpriorite, fid_employe, fid_projet, query;
+    String fdescription, fdate_fin, fdate_debut, fstatut, fpriorite = null, fid_employe, fid_projet, query;
     Connection con = null;
     Statement st = null;
     ResultSet rs = null;
@@ -522,8 +521,9 @@ public class Tache_interface extends javax.swing.JFrame {
                 fdescription = fDescription.getText();
                 fdate_fin = fDate_fin.getText();
                 fdate_debut = fDate_debut.getText();
-                fstatut = fStatut.getText();
-                fpriorite = fPriorite.getText();
+                fstatut =  fStatut.getSelectedItem().toString();         
+                fpriorite = fPriorite.getSelectedItem().toString();
+                
                 fid_employe = fId_employe.getText();
                 fid_projet = fId_projet.getText();
                 
@@ -597,8 +597,6 @@ public class Tache_interface extends javax.swing.JFrame {
         fDescription.setText("");
         fDate_fin.setText("");
         fDate_debut.setText("");
-        fStatut.setText("");
-        fPriorite.setText("");
         fId_employe.setText("");
         fId_projet.setText("");
     }//GEN-LAST:event_ClearActionPerformed
@@ -633,8 +631,7 @@ public class Tache_interface extends javax.swing.JFrame {
                    fDate_debut.setText(rs.getString("date_debut"));
                    fDate_fin.setText(rs.getString("date_debut"));
                    fDate_debut.setText(rs.getString("date_debut"));
-                   fStatut.setText(rs.getString("statut"));
-                   fPriorite.setText(rs.getString("priorite"));
+                   fPriorite.setSelectedItem(rs.getString("priorite"));
                    fId_employe.setText(rs.getString("idemploye"));
                    fId_projet.setText(rs.getString("idprojet"));
                    notFound = 1;
@@ -670,14 +667,6 @@ public class Tache_interface extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
-    private void fStatutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fStatutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fStatutActionPerformed
-
-    private void fPrioriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fPrioriteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fPrioriteActionPerformed
-
     private void fId_employeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fId_employeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fId_employeActionPerformed
@@ -685,6 +674,14 @@ public class Tache_interface extends javax.swing.JFrame {
     private void fId_projetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fId_projetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fId_projetActionPerformed
+
+    private void fPrioriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fPrioriteActionPerformed
+        String selectedvalue = fPriorite.getSelectedItem().toString();        // TODO add your handling code here:
+    }//GEN-LAST:event_fPrioriteActionPerformed
+
+    private void fStatutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fStatutActionPerformed
+        String selectedvalue = fStatut.getSelectedItem().toString();        // TODO add your handling code here:
+    }//GEN-LAST:event_fStatutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -733,8 +730,8 @@ public class Tache_interface extends javax.swing.JFrame {
     private javax.swing.JTextField fDescription;
     private javax.swing.JTextField fId_employe;
     private javax.swing.JTextField fId_projet;
-    private javax.swing.JTextField fPriorite;
-    private javax.swing.JTextField fStatut;
+    private javax.swing.JComboBox<String> fPriorite;
+    private javax.swing.JComboBox<String> fStatut;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -753,4 +750,8 @@ public class Tache_interface extends javax.swing.JFrame {
     private javax.swing.JButton submit;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
+
+    private boolean isValidDateFormat(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

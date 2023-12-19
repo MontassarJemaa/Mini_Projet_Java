@@ -47,7 +47,7 @@
         </Property>
       </Properties>
       <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Projet_Interface"/>
       </AccessibilityProperties>
 
       <Layout>
@@ -94,6 +94,9 @@
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
 
           <Layout>
             <DimensionLayout dim="0">
