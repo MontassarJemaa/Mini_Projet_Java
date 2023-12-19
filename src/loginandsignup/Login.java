@@ -100,6 +100,11 @@ public class Login extends javax.swing.JFrame {
 
         email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         email.setForeground(new java.awt.Color(102, 102, 102));
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(102, 102, 102));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -251,6 +256,10 @@ public class Login extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_LoginBtnActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
 
     /**
      * @param args the command line arguments
