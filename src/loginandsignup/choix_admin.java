@@ -164,7 +164,8 @@ public class choix_admin extends javax.swing.JFrame {
         Affectation_interface affectation_interfaceFrame = new Affectation_interface();
         affectation_interfaceFrame.setVisible(true);
         affectation_interfaceFrame.pack();
-        affectation_interfaceFrame.setLocationRelativeTo(null);         // TODO add your handling code here:
+        affectation_interfaceFrame.setLocationRelativeTo(null);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_AffectationBtnActionPerformed
 
     private void projetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projetBtnActionPerformed
