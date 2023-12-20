@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -39,20 +40,21 @@ public class Affectation_interface extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        fName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        lName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        IdEmp = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
-        update = new javax.swing.JButton();
-        delete = new javax.swing.JButton();
         Clear = new javax.swing.JButton();
         serachData = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         BACKBtn = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
+        Comm = new javax.swing.JTextField();
+        IdTache = new javax.swing.JTextField();
+        update = new javax.swing.JButton();
+        Delete = new javax.swing.JButton();
+        id = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -67,29 +69,17 @@ public class Affectation_interface extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("First Name");
-
-        fName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fNameActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Identifiant de l'employee");
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Last Name");
-
-        lName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lNameActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("Tache assigné");
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Email");
+        jLabel4.setText("Commentaire");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        IdEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                IdEmpActionPerformed(evt);
             }
         });
 
@@ -97,20 +87,6 @@ public class Affectation_interface extends javax.swing.JFrame {
         submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitActionPerformed(evt);
-            }
-        });
-
-        update.setText("Update");
-        update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateActionPerformed(evt);
-            }
-        });
-
-        delete.setText("Delete");
-        delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
             }
         });
 
@@ -152,39 +128,79 @@ public class Affectation_interface extends javax.swing.JFrame {
             }
         });
 
+        Comm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CommActionPerformed(evt);
+            }
+        });
+
+        IdTache.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdTacheActionPerformed(evt);
+            }
+        });
+
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchBtn))
-                    .addComponent(fName)
-                    .addComponent(lName)
-                    .addComponent(email)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(submit)
-                        .addGap(18, 18, 18)
-                        .addComponent(update)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete)
-                        .addGap(18, 18, 18)
-                        .addComponent(Clear)))
-                .addGap(84, 84, 84))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(BACKBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutBtn)
                 .addGap(23, 23, 23))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(IdTache)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Comm, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(searchBtn))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(submit)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(update)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Delete)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Clear))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(IdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(84, 84, 84))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,28 +208,30 @@ public class Affectation_interface extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
+                .addComponent(IdTache, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
+                .addComponent(Comm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(serachData, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BACKBtn)
                     .addComponent(LogoutBtn))
@@ -228,7 +246,7 @@ public class Affectation_interface extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "First Name", "Last Name", "Email"
+                "ID", "Id Employe", "Id Tache", "Commentaire"
             }
         ) {
             Class[] types = new Class [] {
@@ -300,41 +318,33 @@ public class Affectation_interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNameActionPerformed
+    private void IdEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdEmpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fNameActionPerformed
-
-    private void lNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lNameActionPerformed
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_IdEmpActionPerformed
     
     public void loadData(){
       try {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String url = "jdbc:MySQL://localhost:3306/java_users_db";
+        String url = "jdbc:MySQL://localhost:3306/java_user_database";
         String user = "root";
         String pass = "";
 
         Connection con = DriverManager.getConnection(url, user, pass);
         Statement st = con.createStatement();
             
-       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "First Name", "Last Name", "email"}, 0);
+       DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Id Employe", "Id Tache", "Commentaire"}, 0);
       
        Table.setModel(model);
-       String sql = "SELECT * FROM user";
+       String sql = "SELECT * FROM affectation";
        
        ResultSet rs = st.executeQuery(sql);
        String i, f, l,e;
        while(rs.next()){
          i = rs.getString("id");
-         f = rs.getString("first_name");
-         l = rs.getString("last_name");
-         e = rs.getString("email");
+         f = rs.getString("id_emp");
+         l = rs.getString("id_tache");
+         e = rs.getString("commantaire");
          model.addRow(new Object[]{i, f, l, e});
        }
      }catch(Exception e){
@@ -351,36 +361,36 @@ public class Affectation_interface extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement st = con.createStatement();
             
-            if("".equals(fName.getText())){
+            if("".equals(IdEmp.getText())){
              
                 JOptionPane.showMessageDialog(new JFrame(), "First Name is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(lName.getText())){
+            }else if("".equals(IdTache.getText())){
              
                 JOptionPane.showMessageDialog(new JFrame(), "Last Name is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
-            }else if("".equals(email.getText())){
+            }else if("".equals(Comm.getText())){
              
                 JOptionPane.showMessageDialog(new JFrame(), "Email Adress is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-                fN = fName.getText();
-                lN = lName.getText();
-                em = email.getText();
-                query = "INSERT INTO user (first_name, last_name, email) "
+                fN = IdEmp.getText();
+                lN = IdTache.getText();
+                em = Comm.getText();
+                query = "INSERT INTO affectation (id_emp, id_tache, commantaire) "
                         + "VALUES ('"+fN+"','"+lN+"','"+em+"')";
                
                st.executeUpdate(query);
-               fName.setText("");
-               lName.setText("");
-               email.setText("");
+               IdEmp.setText("");
+               IdTache.setText("");
+               IdEmp.setText("");
                showMessageDialog(null, "Successfully registered.");
                loadData();
                con.close();
@@ -392,55 +402,13 @@ public class Affectation_interface extends javax.swing.JFrame {
         
     }//GEN-LAST:event_submitActionPerformed
 
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        String ID;
-        int notFound = 0;
-        String fN, lN, em;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
-            String user = "root";
-            String pass = "";
-            
-            Connection con = DriverManager.getConnection(url, user, pass);
-            Statement st = con.createStatement();
-            
-            ID = serachData.getText();
-            if("".equals(ID)){
-              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
-               ResultSet rs = st.executeQuery(sql);
-               while(rs.next()){
-                 notFound = 1;
-                 fN = fName.getText();
-                 lN = lName.getText();
-                 em = email.getText();
-                 String sql2 = "UPDATE user SET first_name='"+fN+"', last_name='"+lN+"', email='"+em+"'  WHERE id="+ID;
-                 st.executeUpdate(sql2); 
-                 loadData();
-                 con.close();
-               }
-               if(notFound == 0){
-                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-               }
-            }
-        }catch(Exception e){
-            System.out.println("Error "+ e.getMessage());
-            
-        } 
-    }//GEN-LAST:event_updateActionPerformed
-
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         String ID;
         int notFound = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
             String user = "root";
             String pass = "";
             
@@ -452,12 +420,12 @@ public class Affectation_interface extends javax.swing.JFrame {
               JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
+               String sql = "SELECT * FROM affectation WHERE id="+ID;
                ResultSet rs = st.executeQuery(sql);
                while(rs.next()){
-                   fName.setText(rs.getString("first_name"));
-                   lName.setText(rs.getString("last_name"));
-                   email.setText(rs.getString("email"));
+                   IdEmp.setText(rs.getString("id_emp"));
+                   IdTache.setText(rs.getString("id_tache"));
+                   Comm.setText(rs.getString("Commantaire"));
                    notFound = 1;
 
                   con.close();
@@ -475,52 +443,14 @@ public class Affectation_interface extends javax.swing.JFrame {
         
     }//GEN-LAST:event_searchBtnActionPerformed
 
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        String ID;
-        int notFound = 0;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            String url = "jdbc:MySQL://localhost:3306/java_users_db";
-            String user = "root";
-            String pass = "";
-            
-            Connection con = DriverManager.getConnection(url, user, pass);
-            Statement st = con.createStatement();
-            
-            ID = serachData.getText();
-            if("".equals(ID)){
-              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-            }else {
-               String sql = "SELECT * FROM user WHERE id="+ID;
-               ResultSet rs = st.executeQuery(sql);
-               while(rs.next()){
-                 notFound = 1;
-                 String sql2 = "DELETE FROM user WHERE id="+ID;
-                 st.executeUpdate(sql2); 
-                 loadData();
-                 con.close();
-               }
-               if(notFound == 0){
-                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
-                                     JOptionPane.ERROR_MESSAGE);
-               }
-            }
-        }catch(Exception e){
-            System.out.println("Error "+ e.getMessage());
-            
-        }  
-    }//GEN-LAST:event_deleteActionPerformed
-
     private void serachDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serachDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_serachDataActionPerformed
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-        fName.setText("");
-        lName.setText("");
-        email.setText("");
+        IdEmp.setText("");
+        IdTache.setText("");
+        Comm.setText("");
     }//GEN-LAST:event_ClearActionPerformed
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
@@ -538,6 +468,136 @@ public class Affectation_interface extends javax.swing.JFrame {
         choix_adminFrame.setLocationRelativeTo(null);
         this.dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_BACKBtnActionPerformed
+
+    private void CommActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CommActionPerformed
+
+    private void IdTacheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdTacheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdTacheActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        // TODO add your handling code here:
+        String ID;
+    int notFound = 0;
+    String idemp,idtache,commentaire = null, query;
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        String url = "jdbc:MySQL://localhost:3306/java_user_database";
+        String user = "root";
+        String pass = "";
+        
+        con = DriverManager.getConnection(url, user, pass);
+        st = con.createStatement();
+        
+        ID = serachData.getText();
+        if("".equals(ID)){
+            JOptionPane.showMessageDialog(new JFrame(), "ID is required", "Dialog",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            String sql = "SELECT * FROM affectation WHERE id=" + ID;
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                notFound = 1;
+                idemp = IdEmp.getText();
+                idtache = IdTache.getText();
+                commentaire = Comm.getText();
+                
+                
+                String sql2 = "UPDATE affectation SET id_emp='" + idemp + "', id_tache='" + idtache + "', commantaire='" + commentaire + "' WHERE id=" + ID;
+                st.executeUpdate(sql2); 
+                loadData();
+            }
+
+            if(notFound == 0){
+                JOptionPane.showMessageDialog(new JFrame(), "Invalid ID", "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    } catch(Exception e){
+        System.out.println("Error "+ e.getMessage());
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (st != null) st.close();
+            if (con != null) con.close();
+        } catch (Exception ex) {
+            System.out.println("Error closing resources: " + ex.getMessage());
+        }
+    }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        // TODO add your handling code here:
+         String ID;
+        int notFound = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            String url = "jdbc:MySQL://localhost:3306/java_user_database";
+            String user = "root";
+            String pass = "";
+            
+            Connection con = DriverManager.getConnection(url, user, pass);
+            Statement st = con.createStatement();
+            
+            ID = serachData.getText();
+            if("".equals(ID)){
+              JOptionPane.showMessageDialog(new JFrame(), "ID is require", "Dialog",
+                                     JOptionPane.ERROR_MESSAGE);
+            }else {
+               String sql = "SELECT * FROM affectation WHERE id="+ID;
+               ResultSet rs = st.executeQuery(sql);
+               while(rs.next()){
+                 notFound = 1;
+                 String sql2 = "DELETE FROM affectation WHERE id="+ID;
+                 st.executeUpdate(sql2); 
+                 loadData();
+                }
+                  
+                  con.close();
+                  st.close();
+                  rs.close();
+               if(notFound == 0){
+                  JOptionPane.showMessageDialog(new JFrame(), "invalid ID", "Dialog",
+                                     JOptionPane.ERROR_MESSAGE);
+               }
+            }
+        }catch(Exception e){
+            System.out.println("Error "+ e.getMessage());
+            
+        }  
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+        String ID;
+int notFound = 0;
+String sql = "Select Id FROM employe";
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost:3306/java_user_database";
+    String user = "root";
+    String pass = "";
+    Connection con = DriverManager.getConnection(url, user, pass);
+    Statement st = con.createStatement();
+    // Corrected typo here
+    PreparedStatement pst = con.prepareStatement(sql);
+    ResultSet rs = pst.executeQuery();
+    while (rs.next()) {     
+        id.addItem(rs.getString("Id")); 
+    }    
+} catch (Exception e) {
+    System.out.println("Error " + e.getMessage());
+}
+    }//GEN-LAST:event_idActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -567,7 +627,7 @@ public class Affectation_interface extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -583,11 +643,13 @@ public class Affectation_interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BACKBtn;
     private javax.swing.JButton Clear;
+    private javax.swing.JTextField Comm;
+    private javax.swing.JButton Delete;
+    private javax.swing.JTextField IdEmp;
+    private javax.swing.JTextField IdTache;
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JTable Table;
-    private javax.swing.JButton delete;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField fName;
+    private javax.swing.JComboBox<String> id;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -596,7 +658,6 @@ public class Affectation_interface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lName;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField serachData;
     private javax.swing.JButton submit;
