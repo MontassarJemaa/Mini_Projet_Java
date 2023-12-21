@@ -21,11 +21,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Affectation_interface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form View
-     */
+        
     public Affectation_interface() {
         initComponents();
+        combo = new javax.swing.JComboBox<>();
+        add(combo);
+        comboActionPerformed(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class Affectation_interface extends javax.swing.JFrame {
         IdTache = new javax.swing.JTextField();
         update = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
-        id = new javax.swing.JComboBox<>();
+        combo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -69,7 +70,7 @@ public class Affectation_interface extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Identifiant de l'employee");
+        jLabel2.setText("Identifiant de l'employe");
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tache assigné");
@@ -154,9 +155,14 @@ public class Affectation_interface extends javax.swing.JFrame {
             }
         });
 
-        id.addActionListener(new java.awt.event.ActionListener() {
+        combo.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentRemoved(java.awt.event.ContainerEvent evt) {
+                comboComponentRemoved(evt);
+            }
+        });
+        combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
+                comboActionPerformed(evt);
             }
         });
 
@@ -198,7 +204,7 @@ public class Affectation_interface extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(IdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
-                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(84, 84, 84))
         );
@@ -210,7 +216,7 @@ public class Affectation_interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IdEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(12, 12, 12)
@@ -370,15 +376,15 @@ public class Affectation_interface extends javax.swing.JFrame {
             
             if("".equals(IdEmp.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "First Name is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the ID_Employe", "ERROR",
                                      JOptionPane.ERROR_MESSAGE);
             }else if("".equals(IdTache.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Last Name is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert tache assigné", "ERROR",
                                      JOptionPane.ERROR_MESSAGE);
             }else if("".equals(Comm.getText())){
              
-                JOptionPane.showMessageDialog(new JFrame(), "Email Adress is require", "Dialog",
+                JOptionPane.showMessageDialog(new JFrame(), "Please insert the Commaontaire", "ERROR",
                                      JOptionPane.ERROR_MESSAGE);
             }else {
                 fN = IdEmp.getText();
@@ -391,6 +397,7 @@ public class Affectation_interface extends javax.swing.JFrame {
                IdEmp.setText("");
                IdTache.setText("");
                IdEmp.setText("");
+               Comm.setText("");
                showMessageDialog(null, "Successfully registered.");
                loadData();
                con.close();
@@ -575,28 +582,26 @@ public class Affectation_interface extends javax.swing.JFrame {
         }  
     }//GEN-LAST:event_DeleteActionPerformed
 
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+    private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
+                                    
+    String sql = "SELECT Id FROM employe";
+
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_user_database", "root", "");
+             PreparedStatement pst = con.prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+
+            while (rs.next()) {
+                combo.addItem(rs.getString("Id"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_comboActionPerformed
+
+    private void comboComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_comboComponentRemoved
         // TODO add your handling code here:
-        String ID;
-int notFound = 0;
-String sql = "Select Id FROM employe";
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    String url = "jdbc:mysql://localhost:3306/java_user_database";
-    String user = "root";
-    String pass = "";
-    Connection con = DriverManager.getConnection(url, user, pass);
-    Statement st = con.createStatement();
-    // Corrected typo here
-    PreparedStatement pst = con.prepareStatement(sql);
-    ResultSet rs = pst.executeQuery();
-    while (rs.next()) {     
-        id.addItem(rs.getString("Id")); 
-    }    
-} catch (Exception e) {
-    System.out.println("Error " + e.getMessage());
-}
-    }//GEN-LAST:event_idActionPerformed
+    }//GEN-LAST:event_comboComponentRemoved
 
 
     /**
@@ -631,7 +636,7 @@ try {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+                new Affectation_interface().setVisible(true);
                 Affectation_interface x = new Affectation_interface();
                 x.loadData();
                 x.setLocationRelativeTo(null);
@@ -649,7 +654,7 @@ try {
     private javax.swing.JTextField IdTache;
     private javax.swing.JButton LogoutBtn;
     private javax.swing.JTable Table;
-    private javax.swing.JComboBox<String> id;
+    private javax.swing.JComboBox<String> combo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
