@@ -13,10 +13,12 @@ public class Statut {
     private String type;
  
     // Constructeur
+
     public Statut(int idstatut, String type) {
         this.idstatut = idstatut;
         this.type = type;
     }
+    
  
     // Getters et Setters
     public int getIdstatut() {
@@ -34,5 +36,11 @@ public class Statut {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Statut{" + "idstatut=" + idstatut + ", type=" + type + '}';
+    }
+    
 }
  

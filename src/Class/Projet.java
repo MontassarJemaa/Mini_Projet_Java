@@ -17,12 +17,15 @@ public class Projet {
     private Date dateLimite;
  
     // Constructeur
+
     public Projet(int idProjet, String categorie, String proprietes, Date dateLimite) {
         this.idProjet = idProjet;
         this.categorie = categorie;
         this.proprietes = proprietes;
         this.dateLimite = dateLimite;
     }
+    
+    
  
     // Getters et Setters
     public int getIdProjet() {
@@ -56,5 +59,11 @@ public class Projet {
     public void setDateLimite(Date dateLimite) {
         this.dateLimite = dateLimite;
     }
+
+    @Override
+    public String toString() {
+        return "Projet{" + "idProjet=" + idProjet + ", categorie=" + categorie + ", proprietes=" + proprietes + ", dateLimite=" + dateLimite + '}';
+    }
+    
 }
 

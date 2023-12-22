@@ -12,10 +12,12 @@ public class ChefDeProjet extends Utilisateur {
     private int idChefDeProjet;
 
     // Constructor
-    public ChefDeProjet(int idUtilisateur, String nom, String prenom, String email, String motDePasse, String role, int idChefDeProjet) {
+
+    public ChefDeProjet(int idChefDeProjet, int idUtilisateur, String nom, String prenom, String email, String motDePasse, String role) {
         super(idUtilisateur, nom, prenom, email, motDePasse, role);
         this.idChefDeProjet = idChefDeProjet;
     }
+    
 
     // Getter and Setter for idChefDeProjet
     public int getIdChefDeProjet() {
@@ -25,4 +27,10 @@ public class ChefDeProjet extends Utilisateur {
     public void setIdChefDeProjet(int idChefDeProjet) {
         this.idChefDeProjet = idChefDeProjet;
     }
+
+    @Override
+    public String toString() {
+        return "ChefDeProjet{" + "idChefDeProjet=" + idChefDeProjet + '}';
+    }
+    
 }

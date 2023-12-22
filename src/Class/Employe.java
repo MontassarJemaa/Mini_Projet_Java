@@ -14,12 +14,14 @@ public class Employe extends Utilisateur {
     private int idTache;
 
     // Constructor
-    public Employe(int idUtilisateur, String nom, String prenom, String email, String motDePasse, String role, int idEmploye, String poste, int idTache) {
+
+    public Employe(int idEmploye, String poste, int idTache, int idUtilisateur, String nom, String prenom, String email, String motDePasse, String role) {
         super(idUtilisateur, nom, prenom, email, motDePasse, role);
         this.idEmploye = idEmploye;
         this.poste = poste;
         this.idTache = idTache;
     }
+    
 
     // Getters and Setters for all attributes
     public int getIdEmploye() {
@@ -45,5 +47,11 @@ public class Employe extends Utilisateur {
     public void setIdTache(int idTache) {
         this.idTache = idTache;
     }
+
+    @Override
+    public String toString() {
+        return "Employe{" + "idEmploye=" + idEmploye + ", poste=" + poste + ", idTache=" + idTache + '}';
+    }
+    
 }
 
