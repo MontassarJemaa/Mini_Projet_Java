@@ -197,10 +197,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_admisbtnActionPerformed
 
     private void admisbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admisbtn1ActionPerformed
-        choix_admin choix_adminFrame = new choix_admin();
-        choix_adminFrame.setVisible(true);
-        choix_adminFrame.pack();
-        choix_adminFrame.setLocationRelativeTo(null); 
+        Affectation_interface Affectation_interfaceFrame = new Affectation_interface();
+        Affectation_interfaceFrame.setVisible(true);
+        Affectation_interfaceFrame.pack();
+        Affectation_interfaceFrame.setLocationRelativeTo(null); 
         this.dispose();
     }//GEN-LAST:event_admisbtn1ActionPerformed
     
