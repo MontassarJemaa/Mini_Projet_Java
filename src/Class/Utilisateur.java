@@ -17,6 +17,7 @@ public class Utilisateur {
     private String role;
 
     // Constructor
+
     public Utilisateur(int idUtilisateur, String nom, String prenom, String email, String motDePasse, String role) {
         this.idUtilisateur = idUtilisateur;
         this.nom = nom;
@@ -25,6 +26,7 @@ public class Utilisateur {
         this.motDePasse = motDePasse;
         this.role = role;
     }
+
 
     // Getters and Setters for all attributes
     public int getIdUtilisateur() {
@@ -74,4 +76,10 @@ public class Utilisateur {
     public void setRole(String role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" + "idUtilisateur=" + idUtilisateur + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", motDePasse=" + motDePasse + ", role=" + role + '}';
+    }
+    
 }

@@ -19,6 +19,7 @@ public class Tache {
     private String priorite;
  
     // Constructeur
+
     public Tache(int idTache, String description, Date dateFin, Date dateDebut, String status, String priorite) {
         this.idTache = idTache;
         this.description = description;
@@ -27,6 +28,7 @@ public class Tache {
         this.status = status;
         this.priorite = priorite;
     }
+    
  
     // Getters et Setters
     public int getIdTache() {
@@ -76,5 +78,11 @@ public class Tache {
     public void setPriorite(String priorite) {
         this.priorite = priorite;
     }
+
+    @Override
+    public String toString() {
+        return "Tache{" + "idTache=" + idTache + ", description=" + description + ", dateFin=" + dateFin + ", dateDebut=" + dateDebut + ", status=" + status + ", priorite=" + priorite + '}';
+    }
+    
 }
  
